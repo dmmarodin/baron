@@ -1,0 +1,37 @@
+[
+    {
+        "type": "Group",
+        "name": "Systems",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "lv0zEPmqyarTgd9w"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\user\\projects\\baron\\src\\camera.rs",
+        "parent_id": "lv0zEPmqyarTgd9w",
+        "fsPath": "c:\\Users\\user\\projects\\baron\\src\\camera.rs",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "4TCwVrmpj38IvRNb"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\user\\projects\\baron\\src\\lib.rs",
+        "parent_id": null,
+        "fsPath": "c:\\Users\\user\\projects\\baron\\src\\lib.rs",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "zYlgAa9IG1m2ek3i"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\user\\projects\\baron\\src\\bin\\main.rs",
+        "parent_id": null,
+        "fsPath": "c:\\Users\\user\\projects\\baron\\src\\bin\\main.rs",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "09IVZE8QcvXLPmCU"
+    }
+]

@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.meta": true,
+    ".cargo": true,
+    ".favorites.json": true,
+    ".vscode": true,
+    "rust-toolchain.toml": true,
+    "target": true,
+    ".gitignore": true,
+    "[!s]*/**": true,
+    "s[!r]*/**": true,
+    "sr[!c]*/**": true
+  },
+  "workspace.isHidden": true
+}
