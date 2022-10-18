@@ -1,2 +1,2 @@
-mod scripts;
-pub use scripts::*;
+mod core;
+pub use crate::core::*;

@@ -1,13 +1,19 @@
 #![feature(core_intrinsics)]
-use baron::camera::CameraPlugin;
 use bevy::prelude::*;
-use bevy_editor_pls::prelude::*;
+
+use baron::camera::CameraPlugin;
+use baron::editor::SetupEditorPlugin;
+use bevy::window::PresentMode;
 
 fn main() {
     App::new()
+        .insert_resource(WindowDescriptor {
+            present_mode: PresentMode::AutoVsync,
+            ..default()
+        })
         .add_plugins(DefaultPlugins)
-        .add_plugin(EditorPlugin)
         .add_plugin(CameraPlugin)
+        .add_plugin(SetupEditorPlugin)
         .add_startup_system(setup)
         .run();
 }
