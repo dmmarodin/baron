@@ -4,6 +4,7 @@ use bevy::prelude::*;
 use baron::camera::CameraPlugin;
 use baron::editor::SetupEditorPlugin;
 use bevy::window::PresentMode;
+use bevy_prototype_debug_lines::{ DebugLinesPlugin, DebugLines };
 
 fn main() {
     App::new()
@@ -14,7 +15,9 @@ fn main() {
         .add_plugins(DefaultPlugins)
         .add_plugin(CameraPlugin)
         .add_plugin(SetupEditorPlugin)
+        .add_plugin(DebugLinesPlugin::with_depth_test(true))
         .add_startup_system(setup)
+        .add_system(test)
         .run();
 }
 
@@ -46,4 +49,8 @@ fn setup(
         transform: Transform::from_xyz(4.0, 8.0, 4.0),
         ..default()
     });
+}
+
+fn test(mut lines: ResMut<DebugLines>) {
+    lines.line(Vec3::splat(-1.0), Vec3::splat(1.0), 0.0);
 }
