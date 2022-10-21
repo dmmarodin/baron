@@ -5,6 +5,14 @@ use baron::camera::CameraPlugin;
 use baron::editor::SetupEditorPlugin;
 use bevy::window::PresentMode;
 use bevy_prototype_debug_lines::{ DebugLinesPlugin, DebugLines };
+use bevy_console::{
+    ConsoleConfiguration,
+    ConsolePlugin,
+    reply,
+    AddConsoleCommand,
+    ConsoleCommand,
+    ToggleConsoleKey,
+};
 
 fn main() {
     App::new()
@@ -16,6 +24,13 @@ fn main() {
         .add_plugin(CameraPlugin)
         .add_plugin(SetupEditorPlugin)
         .add_plugin(DebugLinesPlugin::with_depth_test(true))
+        // .add_plugin(ConsolePlugin)
+        // .insert_resource(ConsoleConfiguration {
+        //     // override config here
+        //     keys: vec![ToggleConsoleKey::KeyCode(KeyCode::F1)],
+        //     ..Default::default()
+        // })
+        // .add_console_command::<ExampleCommand, _, _>(example_command)
         .add_startup_system(setup)
         .add_system(test)
         .run();
@@ -53,4 +68,17 @@ fn setup(
 
 fn test(mut lines: ResMut<DebugLines>) {
     lines.line(Vec3::splat(-1.0), Vec3::splat(1.0), 0.0);
+}
+
+#[derive(ConsoleCommand)]
+#[console_command(name = "example")]
+struct ExampleCommand {
+    /// Some message
+    msg: String,
+}
+
+fn example_command(mut log: ConsoleCommand<ExampleCommand>) {
+    if let Some(ExampleCommand { msg }) = log.take() {
+        // handle command
+    }
 }
